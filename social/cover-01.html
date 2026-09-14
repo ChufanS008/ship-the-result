@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ship-the-result cover 01</title>
+<style>
+  :root{
+    --bg:#FBF3E6; --brown:#6B3A1E; --orange:#D9531E; --tan:#EBDCC0;
+    --navy:#1F2A3A; --ink:#1A1A1A; --mono-fg:#EDE6D8; --blue:#7FB3E6; --red:#F07A74; --green:#9BD08A; --dim:#8E97A6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1080px;height:1080px;background:var(--bg);overflow:hidden}
+  body{font-family:"SF Pro Display","SF Pro Text",-apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--brown);position:relative}
+  .pad{position:absolute;inset:0;padding:60px 68px}
+  .kicker{display:inline-flex;align-items:center;gap:12px;font-size:26px;font-weight:800;letter-spacing:.14em;color:var(--brown);padding-bottom:8px;border-bottom:4px solid var(--orange)}
+  .badge{position:absolute;right:68px;top:60px;background:var(--ink);color:var(--orange);font-family:"SF Mono",Menlo,monospace;font-weight:800;font-size:22px;line-height:1.1;letter-spacing:.08em;padding:20px 18px;border-radius:12px}
+
+  .skill-row{margin-top:54px;display:flex;align-items:center;gap:18px}
+  .tag{background:var(--orange);color:#fff;font-size:22px;font-weight:800;letter-spacing:.16em;padding:8px 14px;border-radius:8px}
+  .name{font-family:"SF Mono",Menlo,monospace;font-size:54px;font-weight:800;color:var(--brown);background:var(--tan);padding:6px 22px;border-radius:14px;letter-spacing:-.01em}
+  .sub{margin-top:14px;font-size:30px;font-weight:700;color:var(--brown)}
+
+  .term{margin-top:26px;background:var(--navy);border-radius:14px;padding:26px 30px;font-family:"SF Mono",Menlo,monospace;font-size:29px;line-height:1.55;color:var(--mono-fg)}
+  .term .row{display:flex;gap:16px;white-space:pre}
+  .term .who{width:120px;flex:none;color:var(--dim);font-size:22px;letter-spacing:.06em;padding-top:5px}
+  .term .who.you{color:var(--blue)} .term .who.cc{color:var(--green)}
+  .term .bad{color:var(--red);font-weight:700}
+  .term .git{margin-top:14px;padding-top:14px;border-top:2px dashed #3A4658;color:var(--dim);font-size:26px}
+  .term .git b{color:var(--mono-fg);font-weight:400}
+
+  .head{margin-top:36px;font-size:80px;font-weight:900;line-height:1.02;letter-spacing:-.02em;color:var(--brown)}
+  .head em{font-style:normal;color:var(--orange)}
+  .deck{margin-top:22px;padding-left:24px;border-left:6px solid var(--orange);font-size:27px;line-height:1.35;font-weight:600;color:var(--brown);max-width:940px}
+
+  .foot{position:absolute;left:68px;right:68px;bottom:50px;display:flex;justify-content:space-between;align-items:center}
+  .gh{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:#fff;font-family:"SF Mono",Menlo,monospace;font-size:24px;font-weight:600;padding:12px 22px 12px 16px;border-radius:12px}
+  .gh svg{width:32px;height:32px;fill:#fff}
+  .num{font-size:24px;font-weight:600;color:#B08A66}
+</style>
+</head>
+<body>
+<div class="pad">
+  <div class="kicker">✎ FIELD NOTES</div>
+  <div class="badge">CLAUDE<br>CODE</div>
+
+  <div class="skill-row"><span class="tag">SKILL</span><span class="name">ship-the-result</span></div>
+  <div class="sub">A correction is not a requirement.</div>
+
+  <div class="term">
+    <div class="row"><span class="who you">you</span><span>make me a grilled cheese</span></div>
+    <div class="row"><span class="who cc">claude</span><span>Done. Added ketchup for tang.</span></div>
+    <div class="row"><span class="who you">you</span><span>no ketchup</span></div>
+    <div class="row"><span class="who cc">claude</span><span>Wrote <span class="bad">grilled_cheese_no_ketchup.md</span></span></div>
+    <div class="git">$ git log -1 --oneline<br>a91f3c2 <b>Add retry logic <span class="bad">(without exponential backoff)</span></b></div>
+  </div>
+
+  <div class="head">I said no ketchup.<br>It went in the <em>filename.</em></div>
+
+  <div class="deck">A skill plus a hook that blocks the commit before your chat corrections land in git history.</div>
+
+  <div class="foot">
+    <span class="gh"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.873.118 3.176.77.84 1.233 1.91 1.233 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .32.216.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>ChufanS008/ship-the-result</span>
+    <span class="num">01</span>
+  </div>
+</div>
+</body>
+</html>
