@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$HOME/.claude/skills/ship-the-result/scripts/hook_pretool.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
