@@ -85,8 +85,8 @@ FAMILIES = [
         "self-reference",
         "narrates the rule it is following; the reader does not care which skill wrote this",
         [
-            r"\b(ship-the-result|no-negative-echo|no-chat-residue)\b",
-            r"\b(following|per|applying|according to|as per|under) (the|this|my|our)? ?(\w+[\-\w]* )?(rule|skill|guideline|policy|convention|instruction)s?\b",
+            r"\bship-the-result\b",
+            r"\b(follow(ing|s|ed)?|per|apply(ing)?|according to|as per|under) (the|this|my|our)? ?(\w+[\-\w]* )?(rule|skill|guideline|policy|convention|instruction)s?\b",
             r"\b(i|we) (will|'ll|am going to|'m going to) (only|just)? ?(write|include|keep|describe|mention)\b",
             r"\b(only|just) (the )?(final(ly)?|adopted|accepted|chosen) (result|version|approach|solution|design)\b",
             r"\b(not|without) (leav|keep|includ|mention|carry)\w* (the )?(rejected|discarded|abandoned|dropped|earlier|previous) \w+",

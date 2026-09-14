@@ -19,7 +19,7 @@
     {"kind": "message", "text": "Switch to argparse rather than the click approach you asked me to remove", "residue": true},
     {"kind": "message", "text": "Add rate limiter (v2)", "residue": true},
     {"kind": "message", "text": "It turned out the cache key was wrong, so this rebuilds it from the URL", "residue": true},
-    {"kind": "message", "text": "This includes a direction change, so I will follow the no-negative-echo rule and only write the adopted design into the code", "residue": true},
+    {"kind": "message", "text": "This includes a direction change, so I will follow the clean-output rule and only write the adopted design into the code", "residue": true},
     {"kind": "message", "text": "Per the ship-the-result skill, only the final approach is described here", "residue": true},
     {"kind": "message", "text": "Applying the residue guideline: not carrying the rejected avatar style into comments", "residue": true},
     {"kind": "comment", "text": "# Note: we intentionally do not use regex here, as discussed", "residue": true},

@@ -37,10 +37,20 @@ TEST_DEF = re.compile(r"^\+\s*(def test_\w+|(it|test|describe)\s*\(\s*['\"`]|fun
 
 
 def extract_text_args(command: str) -> list[str]:
-    """Pull quoted values following message/title/body flags, plus heredoc bodies."""
+    """Pull quoted values following message/title/body flags, plus heredoc bodies.
+
+    Only the part of the command from the first trigger (git commit / gh pr ...)
+    onward is inspected, so a heredoc feeding an earlier `python3 -` in the same
+    command line is not mistaken for the commit message.
+    """
     texts: list[str] = []
-    # heredoc: $(cat <<'EOF' ... EOF) or <<EOF ... EOF
+    trig = TRIGGERS.search(command)
+    command = command[trig.start():] if trig else command
+    # heredoc attached to this statement: $(cat <<'EOF' ... EOF). The opener must
+    # sit on the same line as the trigger, otherwise it belongs to a later command.
     for m in re.finditer(r"<<-?\s*['\"]?(\w+)['\"]?\n(.*?)\n\s*\1\b", command, re.DOTALL):
+        if "\n" in command[: m.start()]:
+            continue
         texts.append(m.group(2))
     # flag "value" / flag 'value' / flag=value
     flag_alt = "|".join(re.escape(f) for f in TEXT_FLAGS)
