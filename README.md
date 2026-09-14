@@ -22,11 +22,21 @@ The cause is an audience mismatch. The agent keeps talking to the person in the 
 
 ## Install
 
+One line. Clones the skill into `~/.claude/skills/`, merges the hook into `~/.claude/settings.json` (backup kept, safe to re-run), and runs the fixture test:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ChufanS008/ship-the-result/main/install.sh | bash
+```
+
+Open a new Claude Code session and it is active.
+
+### Manual install
+
 ```bash
 git clone https://github.com/ChufanS008/ship-the-result ~/.claude/skills/ship-the-result
 ```
 
-Then add the hook. Merge this into `~/.claude/settings.json` (or a project's `.claude/settings.json`):
+Then merge this into `~/.claude/settings.json` (or a project's `.claude/settings.json`):
 
 ```json
 {
